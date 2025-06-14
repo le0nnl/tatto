@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тату салон "Кальмар" | Качественные татуировки в Москве</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent: #f8b400;
+            --light: #f0f0f0;
+            --text: #333333;
+            --text-light: #ffffff;
+            --gray: #888888;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text);
+            background-color: #f9f9f9;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--primary);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            font-size: 2.5rem;
+            color: var(--accent);
+        }
+
+        .logo-text {
+            color: var(--text-light);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .logo-text span {
+            color: var(--accent);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            background-color: #e0a000;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(248, 180, 0, 0.3);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--accent);
+            color: var(--accent);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--accent);
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(26, 26, 46, 0.8), rgba(26, 26, 46, 0.9)), url('images/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: var(--text-light);
+            padding: 120px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        /* Services Section */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--primary);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-img {
+            height: 250px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .service-content {
+            padding: 20px;
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .service-price {
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--accent);
+            margin: 10px 0;
+        }
+
+        /* Artists Section */
+        .artists {
+            background-color: var(--light);
+        }
+
+        .artists-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .artist-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .artist-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .artist-info {
+            padding: 20px;
+        }
+
+        .artist-name {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+            color: var(--primary);
+        }
+
+        .artist-specialty {
+            color: var(--gray);
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s;
+        }
+
+        .social-icon:hover {
+            background-color: var(--accent);
+        }
+
+        /* Portfolio Section */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .portfolio-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 300px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .portfolio-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(26, 26, 46, 0.8);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.5s;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .portfolio-item:hover .portfolio-img {
+            transform: scale(1.1);
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        /* About Section */
+        .about {
+            background-color: var(--light);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .about-text h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .about-features {
+            margin-top: 30px;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .feature-icon {
+            color: var(--accent);
+            font-size: 1.5rem;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-info {
+            background: var(--primary);
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+        }
+
+        .contact-info h3 {
+            color: var(--accent);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .contact-icon {
+            color: var(--accent);
+            font-size: 1.3rem;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        textarea.form-control {
+            height: 150px;
+            resize: vertical;
+        }
+
+        /* Account Section */
+        .account {
+            background: linear-gradient(rgba(26, 26, 46, 0.9), rgba(26, 26, 46, 0.9)), url('images/account-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: var(--text-light);
+            padding: 100px 0;
+        }
+
+        .account-container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .tabs {
+            display: flex;
+            margin-bottom: 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+
+        .tab.active {
+            opacity: 1;
+            border-bottom: 3px solid var(--accent);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: var(--text-light);
+            padding: 50px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .footer-logo span {
+            color: var(--accent);
+        }
+
+        .footer-title {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--accent);
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent);
+            bottom: 0;
+            left: 0;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .about-content,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-img {
+                max-width: 80%;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+            
+            .nav-buttons {
+                display: none;
+            }
+            
+            nav ul {
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .logo-text {
+                font-size: 1.5rem;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-fish"></i>
+                </div>
+                <div class="logo-text">Каль<span>мар</span></div>
+            </a>
+            
+            <nav>
+                <ul>
+                    <li><a href="#services">Услуги</a></li>
+                    <li><a href="#artists">Мастера</a></li>
+                    <li><a href="#portfolio">Портфолио</a></li>
+                    <li><a href="#about">О нас</a></li>
+                    <li><a href="#contact">Контакты</a></li>
+                </ul>
+            </nav>
+            
+            <div class="nav-buttons">
+                <a href="#account" class="btn btn-outline">Личный кабинет</a>
+                <a href="#contact" class="btn btn-primary">Записаться</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Тату салон "Кальмар"</h1>
+            <p>Качественные татуировки от лучших мастеров Москвы. Индивидуальный подход, стерильность и творчество в каждом штрихе.</p>
+            <div class="hero-buttons">
+                <a href="#services" class="btn btn-primary">Наши услуги</a>
+                <a href="#contact" class="btn btn-outline">Записаться онлайн</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section">
+        <div class="container">
+            <h2 class="section-title">Наши услуги и цены</h2>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <img src="images/minimalism.jpg" alt="Минимализм" class="service-img">
+                    <div class="service-content">
+                        <h3 class="service-title">Минимализм</h3>
+                        <p>Простой, но выразительный стиль. Идеально для первого тату.</p>
+                        <div class="service-price">от 3 000 ₽</div>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <img src="images/realism.jpg" alt="Реализм" class="service-img">
+                    <div class="service-content">
+                        <h3 class="service-title">Реализм</h3>
+                        <p>Детализированные работы, максимально приближенные к реальности.</p>
+                        <div class="service-price">от 8 000 ₽</div>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <img src="images/old-school.jpg" alt="Олдскул" class="service-img">
+                    <div class="service-content">
+                        <h3 class="service-title">Олдскул</h3>
+                        <p>Классический стиль с яркими цветами и четкими контурами.</p>
+                        <div class="service-price">от 5 000 ₽</div>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <img src="images/watercolor.jpg" alt="Акварель" class="service-img">
+                    <div class="service-content">
+                        <h3 class="service-title">Акварель</h3>
+                        <p>Эффект размытых красок, напоминающий акварельную живопись.</p>
+                        <div class="service-price">от 7 000 ₽</div>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <img src="images/tribal.jpg" alt="Трайбл" class="service-img">
+                    <div class="service-content">
+                        <h3 class="service-title">Трайбл</h3>
+                        <p>Этнические мотивы с геометрическими узорами и плавными линиями.</p>
+                        <div class="service-price">от 6 000 ₽</div>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <img src="images/cover-up.jpg" alt="Кавер-ап" class="service-img">
+                    <div class="service-content">
+                        <h3 class="service-title">Кавер-ап</h3>
+                        <p>Исправление и перекрытие старых или неудачных татуировок.</p>
+                        <div class="service-price">от 10 000 ₽</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Artists Section -->
+    <section id="artists" class="section artists">
+        <div class="container">
+            <h2 class="section-title">Наши мастера</h2>
+            
+            <div class="artists-grid">
+                <div class="artist-card">
+                    <img src="images/master1.jpg" alt="Алексей Волков" class="artist-img">
+                    <div class="artist-info">
+                        <h3 class="artist-name">Алексей Волков</h3>
+                        <div class="artist-specialty">Реализм, Портреты</div>
+                        <p>Опыт работы: 8 лет. Специализируется на портретах и реалистичных изображениях животных.</p>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-vk"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-telegram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="artist-card">
+                    <img src="images/master2.jpg" alt="Мария Соколова" class="artist-img">
+                    <div class="artist-info">
+                        <h3 class="artist-name">Мария Соколова</h3>
+                        <div class="artist-specialty">Акварель, Минимализм</div>
+                        <p>Опыт работы: 5 лет. Создает нежные и воздушные работы в акварельной технике.</p>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-vk"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-telegram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="artist-card">
+                    <img src="images/master3.jpg" alt="Дмитрий Иванов" class="artist-img">
+                    <div class="artist-info">
+                        <h3 class="artist-name">Дмитрий Иванов</h3>
+                        <div class="artist-specialty">Олдскул, Трайбл</div>
+                        <p>Опыт работы: 10 лет. Мастер традиционных стилей с уникальным почерком.</p>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-vk"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-telegram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section">
+        <div class="container">
+            <h2 class="section-title">Наши работы</h2>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="images/work1.jpg" alt="Тату 1" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>Цветочная композиция</h3>
+                        <p>Акварель, Мария Соколова</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <img src="images/work2.jpg" alt="Тату 2" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>Геометрические узоры</h3>
+                        <p>Минимализм, Дмитрий Иванов</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <img src="images/work3.jpg" alt="Тату 3" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>Этнический орнамент</h3>
+                        <p>Трайбл, Дмитрий Иванов</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <img src="images/work4.jpg" alt="Тату 4" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>Портрет волка</h3>
+                        <p>Реализм, Алексей Волков</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <img src="images/work5.jpg" alt="Тату 5" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>Абстрактная композиция</h3>
+                        <p>Акварель, Мария Соколова</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <img src="images/work6.jpg" alt="Тату 6" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>Классический якорь</h3>
+                        <p>Олдскул, Дмитрий Иванов</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <h2 class="section-title">О нашем салоне</h2>
+            
+            <div class="about-content">
+                <div>
+                    <img src="images/salon-interior.jpg" alt="Интерьер салона" class="about-img">
+                </div>
+                
+                <div class="about-text">
+                    <h2>Тату салон "Кальмар" - место, где рождается искусство</h2>
+                    <p>Мы открыли свои двери в 2015 году и с тех пор создали тысячи уникальных татуировок для наших клиентов. Наша команда - это профессиональные художники с высшим художественным образованием и многолетним опытом работы.</p>
+                    <p>В салоне "Кальмар" мы придерживаемся высочайших стандартов стерильности и безопасности. Все оборудование проходит многоступенчатую обработку, а расходные материалы строго одноразовые.</p>
+                    
+                    <div class="about-features">
+                        <div class="feature">
+                            <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                            <div>Полная стерильность и безопасность</div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon"><i class="fas fa-palette"></i></div>
+                            <div>Индивидуальный дизайн для каждого клиента</div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon"><i class="fas fa-award"></i></div>
+                            <div>Победители международных тату-конвенций</div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon"><i class="fas fa-heart"></i></div>
+                            <div>Бесплатная консультация и коррекция</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Контакты и запись</h2>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Наши контакты</h3>
+                    
+                    <div class="contact-detail">
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div>г. Москва, ул. Татуировочная, д. 15</div>
+                    </div>
+                    
+                    <div class="contact-detail">
+                        <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                        <div>+7 (495) 123-45-67</div>
+                    </div>
+                    
+                    <div class="contact-detail">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div>info@kalmar-tattoo.ru</div>
+                    </div>
+                    
+                    <div class="contact-detail">
+                        <div class="contact-icon"><i class="fas fa-clock"></i></div>
+                        <div>Пн-Пт: 10:00 - 22:00<br>Сб-Вс: 11:00 - 20:00</div>
+                    </div>
+                    
+                    <div class="contact-detail">
+                        <div class="contact-icon"><i class="fas fa-subway"></i></div>
+                        <div>Станции метро: Таганская, Марксистская</div>
+                    </div>
+                    
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2245.372949944803!2d37.61842331593032!3d55.75169728055287!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54a5a738fa419%3A0x7c347d506b52311f!2z0JrRgNCw0YHQvdCw0Y8g0J_RgNC-!5e0!3m2!1sru!2sru!4v1650000000000!5m2!1sru!2sru" width="100%" height="200" style="border:0; border-radius: 8px; margin-top: 20px;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Записаться на сеанс</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Ваше имя</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Телефон</label>
+                            <input type="tel" id="phone" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="master">Выберите мастера</label>
+                            <select id="master" class="form-control" required>
+                                <option value="">-- Выберите мастера --</option>
+                                <option value="volkov">Алексей Волков</option>
+                                <option value="sokolova">Мария Соколова</option>
+                                <option value="ivanov">Дмитрий Иванов</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="date">Желаемая дата</label>
+                            <input type="date" id="date" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Дополнительная информация</label>
+                            <textarea id="message" class="form-control"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Отправить заявку</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Account Section -->
+    <section id="account" class="section account">
+        <div class="container">
+            <h2 class="section-title">Личный кабинет</h2>
+            
+            <div class="account-container">
+                <div class="tabs">
+                    <div class="tab active" onclick="openTab('login')">Вход</div>
+                    <div class="tab" onclick="openTab('register')">Регистрация</div>
+                </div>
+                
+                <div id="login" class="tab-content active">
+                    <form>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="password">Пароль</label>
+                            <input type="password" id="password" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group" style="text-align: right;">
+                            <a href="#" style="color: var(--accent); text-decoration: none;">Забыли пароль?</a>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Войти</button>
+                    </form>
+                </div>
+                
+                <div id="register" class="tab-content">
+                    <form>
+                        <div class="form-group">
+                            <label for="reg-name">Имя</label>
+                            <input type="text" id="reg-name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="reg-email">Email</label>
+                            <input type="email" id="reg-email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="reg-phone">Телефон</label>
+                            <input type="tel" id="reg-phone" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="reg-password">Пароль</label>
+                            <input type="password" id="reg-password" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="reg-confirm">Подтвердите пароль</label>
+                            <input type="password" id="reg-confirm" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="checkbox" id="agree" required>
+                            <label for="agree" style="display: inline; margin-left: 5px;">Согласен с условиями обработки данных</label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Зарегистрироваться</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">Каль<span>мар</span></div>
+                    <p>Качественные татуировки от лучших мастеров Москвы. Индивидуальный подход, стерильность и творчество в каждом штрихе.</p>
+                </div>
+                
+                <div>
+                    <h3 class="footer-title">Навигация</h3>
+                    <ul class="footer-links">
+                        <li><a href="#services">Услуги и цены</a></li>
+                        <li><a href="#artists">Наши мастера</a></li>
+                        <li><a href="#portfolio">Портфолио</a></li>
+                        <li><a href="#about">О нас</a></li>
+                        <li><a href="#contact">Контакты</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="footer-title">Контакты</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> г. Москва, ул. Татуировочная, д. 15</li>
+                        <li><i class="fas fa-phone"></i> +7 (495) 123-45-67</li>
+                        <li><i class="fas fa-envelope"></i> info@kalmar-tattoo.ru</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="footer-title">Мы в соцсетях</h3>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-vk"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-telegram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Тату салон "Кальмар". Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Tab switching for account section
+        function openTab(tabName) {
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            document.getElementById(tabName).classList.add('active');
+            
+            const tabButtons = document.querySelectorAll('.tab');
+            tabButtons.forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            event.currentTarget.classList.add('active');
+        }
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
